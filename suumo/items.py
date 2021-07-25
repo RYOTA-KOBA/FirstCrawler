@@ -8,6 +8,7 @@ import scrapy
 
 class SuumoItem(scrapy.Item):
     # define the fields for your item here like:
-    rent_fee = scrapy.Field()
-    location = scrapy.Field()
+    name = scrapy.Field()
+    fee = scrapy.Field()
+    address = scrapy.Field()
     
