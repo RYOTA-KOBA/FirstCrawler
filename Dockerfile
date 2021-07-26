@@ -16,3 +16,4 @@ RUN pip install --upgrade setuptools
 RUN pip install python-dotenv
 RUN pip install bs4
 RUN pip install urllib3
+RUN pip install scrapy
