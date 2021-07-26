@@ -2,18 +2,20 @@ from bs4 import BeautifulSoup
 import urllib.request
 from dotenv import load_dotenv
 import os
+import socket
 
 load_dotenv()
 
 suumo_url = os.getenv('SUUMO_URL')
+print(suumo_url)
 
-res = urllib.request.urlopen(suumo_url)
+req = urllib.request.urlopen(suumo_url, timeout=10).read()
 
 name = ''
 fee = ''
 address = ''
 
-soup = BeautifulSoup(res.read(), 'html.parser')
+soup = BeautifulSoup(req, 'html.parser')
 contents = soup.find_all('div', class_='property')
 
 for content in contents:
